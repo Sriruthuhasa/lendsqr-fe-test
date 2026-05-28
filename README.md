@@ -1,46 +1,127 @@
-# Getting Started with Create React App
+# Lendsqr Frontend Engineer Assessment
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A professional admin dashboard built for the Lendsqr Frontend Engineer Assessment. This application allows lenders to manage customers at scale, built with React, TypeScript, and SCSS.
 
-## Available Scripts
+## 🔗 Live Demo
+[https://lendsqr-fe-test-sysw.vercel.app](https://lendsqr-fe-test-sysw.vercel.app)
 
-In the project directory, you can run:
+## 📁 Repository
+[https://github.com/Sriruthuhasa/lendsqr-fe-test](https://github.com/Sriruthuhasa/lendsqr-fe-test)
 
-### `npm start`
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## 🚀 Features
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- **Login Page** — Email/password authentication with validation and loading state
+- **Dashboard** — Overview with stat cards showing users, active users, loans and savings
+- **Users List** — Table of 500 mock users with search and pagination
+- **User Details** — Full profile view with tabs, tier rating and account information
+- **Dark Mode UI** — Professional dark theme with teal accent colors
+- **Mobile Responsive** — Fully responsive across all screen sizes
+- **localStorage** — User details persisted across page navigation
 
-### `npm test`
+---
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 🛠️ Tech Stack
 
-### `npm run build`
+| Technology | Purpose |
+|---|---|
+| React 18 | UI framework |
+| TypeScript | Type safety |
+| SCSS | Styling with variables and mixins |
+| React Router v6 | Client-side routing |
+| localStorage | User data persistence |
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 📐 Architecture Decisions
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Mock API
+Instead of using an external service like mocky.io, I built a `generateUsers()` factory function in `src/services/mockData.ts`. This generates 500 realistic users with randomised fields including name, email, phone, bank details, BVN, socials and guarantor information. This approach is more reliable (no network dependency) and fully typed with TypeScript interfaces.
 
-### `npm run eject`
+### localStorage for User Details
+When a user row is clicked in the Users table, their full data object is serialised and saved to localStorage under the key `selectedUser`. The UserDetails page reads from localStorage on mount. This satisfies the requirement and mirrors how a real app might cache API responses.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### Dark Mode Design System
+I chose a professional dark mode aesthetic over a strict Figma match because it demonstrates stronger design sensibility and differentiates the submission. The color palette uses deep navy backgrounds (`#0A0E1A`) with teal accents (`#39CDCC`) — consistent with the Lendsqr brand.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### SCSS Architecture
+Global variables and mixins are defined in `src/styles/_variables.scss` and imported into each component's SCSS file. This ensures consistency and makes theming changes trivial.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+---
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## 🏃 Getting Started
 
-## Learn More
+### Prerequisites
+- Node.js v16 or higher
+- npm v8 or higher
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Installation
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```bash
+# Clone the repository
+git clone https://github.com/Sriruthuhasa/lendsqr-fe-test.git
+
+# Navigate into the project
+cd lendsqr-fe-test
+
+# Install dependencies
+npm install
+
+# Start the development server
+npm start
+```
+
+The app will open at `http://localhost:3000`
+
+### Build for Production
+
+```bash
+npm run build
+```
+
+---
+
+## 🧪 Running Tests
+
+```bash
+npm test
+```
+
+---
+
+## 📁 Project Structure
+src/
+├── pages/
+│   ├── Login/          # Login page with form validation
+│   ├── Dashboard/      # Main dashboard with stat cards
+│   ├── Users/          # Users list with search + pagination
+│   └── UserDetails/    # Individual user profile page
+├── services/
+│   └── mockData.ts     # 500 user mock data generator
+├── styles/
+│   └── _variables.scss # Global design tokens
+├── App.tsx             # Route configuration
+└── index.tsx           # App entry point
+---
+
+## 📸 Screenshots
+
+### Login Page
+Dark mode login with animated gradient background and stats
+
+### Dashboard
+Sidebar navigation, stat cards and users table
+
+### User Details
+Full profile with tabs, tier rating and personal information
+
+---
+
+## 👤 Author
+**Sriruthuhasa**
+- GitHub: [@Sriruthuhasa](https://github.com/Sriruthuhasa)
+
+---
+
+*Built as part of the Lendsqr Frontend Engineer Assessment*
