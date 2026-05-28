@@ -1,0 +1,17 @@
+@import '../../styles/variables';
+@import '../Dashboard/Dashboard.scss';
+
+.topnav__search-input {
+  padding: 0.625rem 1rem 0.625rem 2.5rem;
+  background: $bg-elevated;
+  border: 1px solid $border;
+  border-radius: 8px;
+  color: $text-primary;
+  font-size: 0.875rem;
+  width: 280px;
+  outline: none;
+  transition: $transition;
+
+  &::placeholder { color: $text-muted; }
+  &:focus { border-color: $primary; box-shadow: 0 0 0 3px $primary-glow; }
+}

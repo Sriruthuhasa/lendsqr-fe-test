@@ -1,0 +1,54 @@
+// ============================================
+// DARK MODE PROFESSIONAL THEME
+// ============================================
+
+// Primary Palette
+$primary: #39CDCC;
+$primary-dark: #2BA8A7;
+$primary-glow: rgba(57, 205, 204, 0.15);
+
+// Dark Backgrounds
+$bg-base: #0A0E1A;
+$bg-surface: #111827;
+$bg-elevated: #1A2235;
+$bg-card: #141D2E;
+$bg-hover: #1E2D45;
+
+// Text
+$text-primary: #F0F4FF;
+$text-secondary: #8892A4;
+$text-muted: #4A5568;
+$text-accent: #39CDCC;
+
+// Borders
+$border: rgba(255, 255, 255, 0.06);
+$border-hover: rgba(57, 205, 204, 0.3);
+
+// Status Colors
+$active: #10B981;
+$active-bg: rgba(16, 185, 129, 0.1);
+$inactive: #6B7280;
+$inactive-bg: rgba(107, 114, 128, 0.1);
+$pending: #F59E0B;
+$pending-bg: rgba(245, 158, 11, 0.1);
+$blacklisted: #EF4444;
+$blacklisted-bg: rgba(239, 68, 68, 0.1);
+
+// Shadows
+$shadow-sm: 0 1px 3px rgba(0,0,0,0.4);
+$shadow-md: 0 4px 20px rgba(0,0,0,0.5);
+$shadow-lg: 0 8px 40px rgba(0,0,0,0.6);
+$shadow-glow: 0 0 20px rgba(57,205,204,0.2);
+
+// Typography
+$font-family: 'Inter', 'Work Sans', sans-serif;
+$font-mono: 'JetBrains Mono', monospace;
+
+// Breakpoints
+$mobile: 768px;
+$tablet: 1024px;
+$desktop: 1280px;
+
+// Transitions
+$transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+$transition-slow: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);

@@ -1,0 +1,221 @@
+@import '../../styles/variables';
+@import '../Dashboard/Dashboard.scss';
+
+.back-btn {
+  background: none;
+  border: 1px solid $border;
+  color: $text-secondary;
+  cursor: pointer;
+  font-size: 0.8rem;
+  margin-bottom: 1.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: $transition;
+
+  &:hover {
+    border-color: $primary;
+    color: $primary;
+    background: $primary-glow;
+  }
+}
+
+.user-details__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+
+  h1 {
+    color: $text-primary;
+    font-size: 1.375rem;
+    font-weight: 600;
+  }
+}
+
+.user-details__actions {
+  display: flex;
+  gap: 1rem;
+}
+
+.btn {
+  padding: 0.625rem 1.25rem;
+  border-radius: 8px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  letter-spacing: 0.05em;
+  transition: $transition;
+
+  &--blacklist {
+    border: 1px solid rgba(239,68,68,0.3);
+    color: $blacklisted;
+    background: $blacklisted-bg;
+    &:hover { border-color: $blacklisted; }
+  }
+
+  &--activate {
+    border: 1px solid rgba(57,205,204,0.3);
+    color: $primary;
+    background: $primary-glow;
+    &:hover { border-color: $primary; }
+  }
+}
+
+.profile-card {
+  background: $bg-card;
+  border-radius: 12px;
+  border: 1px solid $border;
+  margin-bottom: 1.5rem;
+  overflow: hidden;
+
+  &__top {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem;
+    border-bottom: 1px solid $border;
+    flex-wrap: wrap;
+  }
+
+  &__avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, $primary, $primary-dark);
+    color: $bg-base;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+
+  &__info {
+    h2 {
+      color: $text-primary;
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+    }
+    p { color: $text-muted; font-size: 0.8rem; }
+  }
+
+  &__tier {
+    p {
+      color: $text-muted;
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  &__balance {
+    h2 {
+      color: $text-primary;
+      font-size: 1.375rem;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      margin-bottom: 0.25rem;
+    }
+    p { color: $text-muted; font-size: 0.8rem; }
+  }
+
+  &__tabs {
+    display: flex;
+    padding: 0 2rem;
+    overflow-x: auto;
+    gap: 0;
+    background: $bg-elevated;
+
+    &::-webkit-scrollbar { height: 3px; }
+  }
+}
+
+.stars .star {
+  color: $text-muted;
+  font-size: 1.25rem;
+  &.filled { color: $pending; }
+}
+
+.tab {
+  background: none;
+  border: none;
+  padding: 1rem 1.5rem;
+  color: $text-secondary;
+  font-size: 0.8rem;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  white-space: nowrap;
+  transition: $transition;
+  font-weight: 400;
+
+  &.active {
+    color: $primary;
+    border-bottom-color: $primary;
+    font-weight: 500;
+  }
+
+  &:hover { color: $text-primary; }
+}
+
+.details-card {
+  background: $bg-card;
+  border-radius: 12px;
+  border: 1px solid $border;
+  padding: 2rem;
+}
+
+.details-section {
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid $border;
+
+  &:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  h3 {
+    color: $text-primary;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid $border;
+  }
+}
+
+.details-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+
+  @media (max-width: $tablet) { grid-template-columns: repeat(2, 1fr); }
+  @media (max-width: $mobile) { grid-template-columns: 1fr; }
+}
+
+.detail-item {
+  .detail-label {
+    color: $text-muted;
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+  }
+
+  .detail-value {
+    color: $text-primary;
+    font-size: 0.875rem;
+    font-weight: 500;
+    line-height: 1.4;
+  }
+}
